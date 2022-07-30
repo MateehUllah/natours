@@ -13,12 +13,8 @@ const router = express.Router();
 //   );
 //   next();
 // });
-router.get(
-  '/',
-  // bookingController.createBookingCheckout,
-  authController.isLoggedIn,
-  viewController.getOverview
-);
+// bookingController.createBookingCheckout,
+router.get('/', authController.isLoggedIn, viewController.getOverview);
 router.get('/tour/:slug', authController.isLoggedIn, viewController.getTour);
 
 // login
