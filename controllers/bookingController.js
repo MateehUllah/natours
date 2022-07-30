@@ -63,6 +63,8 @@ exports.webhookCheckout = (req, res, next) => {
   res.status(200).json({ receieved: true });
 };
 
+//
+
 // exports.createBookingCheckout = catchAsync(async (req, res, next) => {
 //   const { tour, user, price } = req.query;
 //   if (!tour && !user && !price) return next();
