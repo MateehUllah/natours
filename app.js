@@ -20,7 +20,7 @@ const app = express();
 
 //FIXME: Some Challanges are missing
 
-//Start Express app
+//Start Express application
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views')); //it will create slash itself
 //1) Global Middleware
