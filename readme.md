@@ -5,3 +5,7 @@ Built using modern technologies: Node.js, express, mongoDB, mongoose and pug tem
 # How to start your app?
 
 Write npm run start:prod on terminal to start the application in production mode and for development write npm run start on terminal.😁
+
+# Link of deploy natours app
+
+https://natours-web-dev.herokuapp.com/
