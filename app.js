@@ -17,6 +17,10 @@ const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 
 const app = express();
+
+//FIXME: Some Challanges are missing
+
+//Start Express app
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views')); //it will create slash itself
 //1) Global Middleware
