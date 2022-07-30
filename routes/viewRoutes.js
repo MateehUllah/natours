@@ -5,6 +5,7 @@ const bookingController = require('./../controllers/bookingController');
 
 const router = express.Router();
 
+router.use(viewController.alert)
 // router.use((req, res, next) => {
 //   res.setHeader(
 //     'Content-Security-Policy',
