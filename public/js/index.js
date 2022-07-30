@@ -32,7 +32,7 @@ if (userDataForm) {
     form.append('email', document.getElementById('email').value);
     form.append('name', document.getElementById('name').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
+    //console.log(form);
     UpdateSettings(form, 'data');
   });
 }
@@ -57,7 +57,7 @@ if (bookBtn) {
     e.target.textContent = 'Processing...';
     //Whenever there is - it will automatically convert to camelcase
     const { tourId } = e.target.dataset;
-    console.log(tourId);
+    //console.log(tourId);
     bookTour(tourId);
   });
 }
