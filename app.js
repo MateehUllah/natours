@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookie_parser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -27,7 +28,20 @@ app.enable('trust-proxy');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views')); //it will create slash itself
 //1) Global Middleware
+//Implementing CORS
+app.use(cors());
+//Access-Control-Allow-Origin
+// api at different domain and front end on different domain
+// app.use(cors({
+//   origin:'https://www.natours.com'
+// }))
+//OPTIONS is another http method
+//CORS are use to allow non simple request
 //serving static file
+//send req when there is pre flight face
+app.options('*', cors());
+//below is for specific route
+// app.options('/api/v1/tours/:id',cors())
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Set Security HTTP header
