@@ -7,7 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookie_parser = require('cookie-parser');
-const compression=require('compression');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -18,6 +18,8 @@ const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 
 const app = express();
+//to trust the proxies
+app.enable('trust-proxy');
 
 //FIXME: Some Challanges are missing
 
@@ -74,7 +76,8 @@ app.use(
     ],
   })
 );
-app.use(compression())
+//do compression
+app.use(compression());
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
